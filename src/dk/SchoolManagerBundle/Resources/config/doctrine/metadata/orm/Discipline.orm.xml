@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Discipline" table="discipline">
+    <id name="iddiscipline" type="integer" column="IDDISCIPLINE">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nomdiscipline" type="string" column="NOMDISCIPLINE" length="30" nullable="false"/>
+    <many-to-many field="idcours" target-entity="Cours" inversed-by="iddiscipline">
+      <join-table name="disciplinecours">
+        <join-columns>
+          <join-column name="IDDISCIPLINE" referenced-column-name="IDDISCIPLINE"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="IDCOURS" referenced-column-name="IDCOURS"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

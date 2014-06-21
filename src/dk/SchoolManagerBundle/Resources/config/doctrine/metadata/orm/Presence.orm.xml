@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Presence" table="presence">
+    <indexes>
+      <index name="FK_ETRE" columns="IDPERSONNE"/>
+      <index name="FK_JUSTIFIER" columns="IDPLANNING"/>
+    </indexes>
+    <id name="idpresence" type="integer" column="IDPRESENCE">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="dateannulation" type="date" column="DATEANNULATION" nullable="true"/>
+    <field name="motifannulation" type="string" column="MOTIFANNULATION" length="55" nullable="true"/>
+    <field name="datereport" type="date" column="DATEREPORT" nullable="true"/>
+    <many-to-one field="idpersonne" target-entity="Personne">
+      <join-columns>
+        <join-column name="IDPERSONNE" referenced-column-name="IDPERSONNE"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idplanning" target-entity="Planning">
+      <join-columns>
+        <join-column name="IDPLANNING" referenced-column-name="IDPLANNING"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

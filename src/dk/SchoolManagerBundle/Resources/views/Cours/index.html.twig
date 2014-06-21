@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Cours list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Typecours</th>
+                <th>Dureecours</th>
+                <th>Debutsession</th>
+                <th>Finsession</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('cours_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.typecours }}</td>
+                <td>{{ entity.dureecours | date('H/i/s') }}</td>
+                <td>{% if entity.debutsession %}{{ entity.debutsession|date('m/d/Y') }}{% endif %}</td>
+                <td>{% if entity.finsession %}{{ entity.finsession|date('m/d/Y') }}{% endif %}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('cours_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('cours_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('cours_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

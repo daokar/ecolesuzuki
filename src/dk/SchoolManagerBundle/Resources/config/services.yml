@@ -1,0 +1,7 @@
+parameters:
+#    dk_school_manager.example.class: dk\SchoolManagerBundle\Example
+
+services:
+#    dk_school_manager.example:
+#        class: %dk_school_manager.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

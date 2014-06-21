@@ -1,0 +1,270 @@
+dk_school_manager_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: dkSchoolManagerBundle:Default:index }
+hello:
+    pattern: /hello/{name}
+    defaults: { _controller: dkSchoolManagerBundle:Hello:index }
+
+tarif:
+    pattern: /tarif
+    defaults: {_controller: dkSchoolManagerBundle:Tarif:index }
+tarif_create:
+    pattern: /tarif_create
+    defaults: {_controller: dkSchoolManagerBundle:Tarif:create }
+tarif_new:
+    pattern: /new/tarif_new
+    defaults: {_controller: dkSchoolManagerBundle:Tarif:new }
+tarif_show:
+    pattern: /{id}/tarif_show
+    defaults: {_controller: dkSchoolManagerBundle:Tarif:show }
+tarif_edit:
+    pattern: /{id}/edit/tarif_edit
+    defaults: {_controller: dkSchoolManagerBundle:Tarif:edit }
+tarif_update:
+    pattern: /{id}/tarif_update
+    defaults: {_controller: dkSchoolManagerBundle:Tarif:update }
+tarif_delete:
+    pattern: /{id}/tarif_delete
+    defaults: {_controller: dkSchoolManagerBundle:Tarif:delete }
+
+salle:
+    pattern: /salle
+    defaults: {_controller: dkSchoolManagerBundle:Salle:index }
+salle_create:
+    pattern: /salle_create
+    defaults: {_controller: dkSchoolManagerBundle:Salle:create }
+salle_new:
+    pattern: /new/salle_new
+    defaults: {_controller: dkSchoolManagerBundle:Salle:new }
+salle_show:
+    pattern: /{id}/salle_show
+    defaults: {_controller: dkSchoolManagerBundle:Salle:show }
+salle_edit:
+    pattern: /{id}/edit/salle_edit
+    defaults: {_controller: dkSchoolManagerBundle:Salle:edit }
+salle_update:
+    pattern: /{id}/salle_update
+    defaults: {_controller: dkSchoolManagerBundle:Salle:update }
+salle_delete:
+    pattern: /{id}/salle_delete
+    defaults: {_controller: dkSchoolManagerBundle:Salle:delete }
+
+presence:
+    pattern: /presence
+    defaults: {_controller: dkSchoolManagerBundle:Presence:index }
+presence_create:
+    pattern: /presence_create
+    defaults: {_controller: dkSchoolManagerBundle:Presence:create }
+presence_new:
+    pattern: /new/presence_new
+    defaults: {_controller: dkSchoolManagerBundle:Presence:new }
+presence_show:
+    pattern: /{id}/presence_show
+    defaults: {_controller: dkSchoolManagerBundle:Presence:show }
+presence_edit:
+    pattern: /{id}/edit/presence_edit
+    defaults: {_controller: dkSchoolManagerBundle:Presence:edit }
+presence_update:
+    pattern: /{id}/presence_update
+    defaults: {_controller: dkSchoolManagerBundle:Presence:update }
+presence_delete:
+    pattern: /{id}/presence_delete
+    defaults: {_controller: dkSchoolManagerBundle:Presence:delete }
+
+planning:
+    pattern: /planning
+    defaults: {_controller: dkSchoolManagerBundle:Planning:index }
+planning_create:
+    pattern: /planning_create
+    defaults: {_controller: dkSchoolManagerBundle:Planning:create }
+planning_new:
+    pattern: /new/planning_new
+    defaults: {_controller: dkSchoolManagerBundle:Planning:new }
+planning_show:
+    pattern: /{id}/planning_show
+    defaults: {_controller: dkSchoolManagerBundle:Planning:show }
+planning_edit:
+    pattern: /{id}/edit/planning_edit
+    defaults: {_controller: dkSchoolManagerBundle:Planning:edit }
+planning_update:
+    pattern: /{id}/planning_update
+    defaults: {_controller: dkSchoolManagerBundle:Planning:update }
+planning_delete:
+    pattern: /{id}/planning_delete
+    defaults: {_controller: dkSchoolManagerBundle:Planning:delete }
+
+personne:
+    pattern: /personne
+    defaults: {_controller: dkSchoolManagerBundle:Personne:index }
+personne_create:
+    pattern: /personne_create
+    defaults: {_controller: dkSchoolManagerBundle:Personne:create }
+personne_new:
+    pattern: /new/personne_new
+    defaults: {_controller: dkSchoolManagerBundle:Personne:new }
+personne_show:
+    pattern: /{id}/personne_show
+    defaults: {_controller: dkSchoolManagerBundle:Personne:show }
+personne_edit:
+    pattern: /{id}/edit/personne_edit
+    defaults: {_controller: dkSchoolManagerBundle:Personne:edit }
+personne_update:
+    pattern: /{id}/personne_update
+    defaults: {_controller: dkSchoolManagerBundle:Personne:update }
+personne_delete:
+    pattern: /{id}/personne_delete
+    defaults: {_controller: dkSchoolManagerBundle:Personne:delete }
+
+parente:
+    pattern: /parente
+    defaults: {_controller: dkSchoolManagerBundle:Parente:index }
+parente_create:
+    pattern: /parente_create
+    defaults: {_controller: dkSchoolManagerBundle:Parente:create }
+parente_new:
+    pattern: /new/parente_new
+    defaults: {_controller: dkSchoolManagerBundle:Parente:new }
+parente_show:
+    pattern: /{id}/parente_show
+    defaults: {_controller: dkSchoolManagerBundle:Parente:show }
+parente_edit:
+    pattern: /{id}/edit/parente_edit
+    defaults: {_controller: dkSchoolManagerBundle:Parente:edit }
+parente_update:
+    pattern: /{id}/parente_update
+    defaults: {_controller: dkSchoolManagerBundle:Parente:update }
+parente_delete:
+    pattern: /{id}/parente_delete
+    defaults: {_controller: dkSchoolManagerBundle:Parente:delete }
+
+paiement:
+    pattern: /paiement
+    defaults: {_controller: dkSchoolManagerBundle:Paiement:index }
+paiement_create:
+    pattern: /paiement_create
+    defaults: {_controller: dkSchoolManagerBundle:Paiement:create }
+paiement_new:
+    pattern: /new/paiement_new
+    defaults: {_controller: dkSchoolManagerBundle:Paiement:new }
+paiement_show:
+    pattern: /{id}/paiement_show
+    defaults: {_controller: dkSchoolManagerBundle:Paiement:show }
+paiement_edit:
+    pattern: /{id}/edit/paiement_edit
+    defaults: {_controller: dkSchoolManagerBundle:Paiement:edit }
+paiement_update:
+    pattern: /{id}/paiement_update
+    defaults: {_controller: dkSchoolManagerBundle:Paiement:update }
+paiement_delete:
+    pattern: /{id}/paiement_delete
+    defaults: {_controller: dkSchoolManagerBundle:Paiement:delete }
+
+inscription:
+    pattern: /inscription
+    defaults: {_controller: dkSchoolManagerBundle:Inscription:index }
+inscription_create:
+    pattern: /inscription_create
+    defaults: {_controller: dkSchoolManagerBundle:Inscription:create }
+inscription_new:
+    pattern: /new/inscription_new
+    defaults: {_controller: dkSchoolManagerBundle:Inscription:new }
+inscription_show:
+    pattern: /{id}/inscription_show
+    defaults: {_controller: dkSchoolManagerBundle:Inscription:show }
+inscription_edit:
+    pattern: /{id}/edit/inscription_edit
+    defaults: {_controller: dkSchoolManagerBundle:Inscription:edit }
+inscription_update:
+    pattern: /{id}/inscription_update
+    defaults: {_controller: dkSchoolManagerBundle:Inscription:update }
+inscription_delete:
+    pattern: /{id}/inscription_delete
+    defaults: {_controller: dkSchoolManagerBundle:Inscription:delete }
+
+discipline:
+    pattern: /discipline
+    defaults: {_controller: dkSchoolManagerBundle:Discipline:index }
+discipline_create:
+    pattern: /discipline_create
+    defaults: {_controller: dkSchoolManagerBundle:Discipline:create }
+discipline_new:
+    pattern: /new/discipline_new
+    defaults: {_controller: dkSchoolManagerBundle:Discipline:new }
+discipline_show:
+    pattern: /{id}/discipline_show
+    defaults: {_controller: dkSchoolManagerBundle:Discipline:show }
+discipline_edit:
+    pattern: /{id}/edit/discipline_edit
+    defaults: {_controller: dkSchoolManagerBundle:Discipline:edit }
+discipline_update:
+    pattern: /{id}/discipline_update
+    defaults: {_controller: dkSchoolManagerBundle:Discipline:update }
+discipline_delete:
+    pattern: /{id}/discipline_delete
+    defaults: {_controller: dkSchoolManagerBundle:Discipline:delete }
+
+cours:
+    pattern: /cours
+    defaults: {_controller: dkSchoolManagerBundle:Cours:index }
+cours_create:
+    pattern: /cours_create
+    defaults: {_controller: dkSchoolManagerBundle:Cours:create }
+cours_new:
+    pattern: /new/cours_new
+    defaults: {_controller: dkSchoolManagerBundle:Cours:new }
+cours_show:
+    pattern: /{id}/cours_show
+    defaults: {_controller: dkSchoolManagerBundle:Cours:show }
+cours_edit:
+    pattern: /{id}/edit/cours_edit
+    defaults: {_controller: dkSchoolManagerBundle:Cours:edit }
+cours_update:
+    pattern: /{id}/cours_update
+    defaults: {_controller: dkSchoolManagerBundle:Cours:update }
+cours_delete:
+    pattern: /{id}/cours_delete
+    defaults: {_controller: dkSchoolManagerBundle:Cours:delete }
+
+adresse:
+    pattern: /adresse
+    defaults: {_controller: dkSchoolManagerBundle:Adresse:index }
+adresse_create:
+    pattern: /adresse_create
+    defaults: {_controller: dkSchoolManagerBundle:Adresse:create }
+adresse_new:
+    pattern: /new/adresse_new
+    defaults: {_controller: dkSchoolManagerBundle:Adresse:new }
+adresse_show:
+    pattern: /{id}/adresse_show
+    defaults: {_controller: dkSchoolManagerBundle:Adresse:show }
+adresse_edit:
+    pattern: /{id}/edit/adresse_edit
+    defaults: {_controller: dkSchoolManagerBundle:Adresse:edit }
+adresse_update:
+    pattern: /{id}/adresse_update
+    defaults: {_controller: dkSchoolManagerBundle:Adresse:update }
+adresse_delete:
+    pattern: /{id}/adresse_delete
+    defaults: {_controller: dkSchoolManagerBundle:Adresse:delete }
+
+accessoire:
+    pattern: /accessoire
+    defaults: {_controller: dkSchoolManagerBundle:Accessoire:index }
+accessoire_create:
+    pattern: /accessoire_create
+    defaults: {_controller: dkSchoolManagerBundle:Accessoire:create }
+accessoire_new:
+    pattern: /new/accessoire_new
+    defaults: {_controller: dkSchoolManagerBundle:Accessoire:new }
+accessoire_show:
+    pattern: /{id}/accessoire_show
+    defaults: {_controller: dkSchoolManagerBundle:Accessoire:show }
+accessoire_edit:
+    pattern: /{id}/edit/accessoire_edit
+    defaults: {_controller: dkSchoolManagerBundle:Accessoire:edit }
+accessoire_update:
+    pattern: /{id}/accessoire_update
+    defaults: {_controller: dkSchoolManagerBundle:Accessoire:update }
+accessoire_delete:
+    pattern: /{id}/accessoire_delete
+    defaults: {_controller: dkSchoolManagerBundle:Accessoire:delete }

@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Accessoire list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomaccessoire</th>
+                <th>Debutlocation</th>
+                <th>Finlocation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('accessoire_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.nomaccessoire }}</td>
+                <td>{{ entity.idPersonne }}</td>
+                <td>{{ entity.idTarif }}</td>
+                <td>{% if entity.debutlocation %}{{ entity.debutlocation|date('m/d/Y') }}{% endif %}</td>
+                <td>{% if entity.finlocation %}{{ entity.finlocation|date('m/d/Y') }}{% endif %}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('accessoire_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('accessoire_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('accessoire_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

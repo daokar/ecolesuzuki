@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Inscription" table="inscription">
+    <indexes>
+      <index name="FK_FAIRE" columns="IDPERSONNE"/>
+    </indexes>
+    <id name="idinscription" type="integer" column="IDINSCRIPTION">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="dateinscription" type="date" column="DATEINSCRIPTION" nullable="false"/>
+    <field name="modalitepaiement" type="string" column="MODALITEPAIEMENT" length="30" nullable="true"/>
+    <field name="dateabandon" type="date" column="DATEABANDON" nullable="true"/>
+    <field name="motifabandon" type="text" column="MOTIFABANDON" nullable="true"/>
+    <many-to-one field="idpersonne" target-entity="Personne">
+      <join-columns>
+        <join-column name="IDPERSONNE" referenced-column-name="IDPERSONNE"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-many field="idpaiment" target-entity="Paiement" inversed-by="idinscription">
+      <join-table name="paiementinscription">
+        <join-columns>
+          <join-column name="IDINSCRIPTION" referenced-column-name="IDINSCRIPTION"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="IDPAIMENT" referenced-column-name="IDPAIMENT"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+    <many-to-many field="idcours" target-entity="Cours" inversed-by="idinscription">
+      <join-table name="inscriptioncours">
+        <join-columns>
+          <join-column name="IDINSCRIPTION" referenced-column-name="IDINSCRIPTION"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="IDCOURS" referenced-column-name="IDCOURS"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

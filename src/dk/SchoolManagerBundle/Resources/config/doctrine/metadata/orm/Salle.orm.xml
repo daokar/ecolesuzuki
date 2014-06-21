@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Salle" table="salle">
+    <id name="idsalle" type="integer" column="IDSALLE">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nomsalle" type="string" column="NOMSALLE" length="30" nullable="false"/>
+    <field name="capacitesalle" type="decimal" column="CAPACITESALLE" precision="3" scale="0" nullable="true"/>
+  </entity>
+</doctrine-mapping>

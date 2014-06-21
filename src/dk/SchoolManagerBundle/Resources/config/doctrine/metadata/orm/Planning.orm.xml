@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Planning" table="planning">
+    <indexes>
+      <index name="FK_AVOIR_LIEU" columns="IDSALLE"/>
+      <index name="FK_PLANIFIER" columns="IDCOURS"/>
+    </indexes>
+    <id name="idplanning" type="integer" column="IDPLANNING">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="dateplanning" type="datetime" column="DATEPLANNING" nullable="false"/>
+    <many-to-one field="idsalle" target-entity="Salle">
+      <join-columns>
+        <join-column name="IDSALLE" referenced-column-name="IDSALLE"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idcours" target-entity="Cours">
+      <join-columns>
+        <join-column name="IDCOURS" referenced-column-name="IDCOURS"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

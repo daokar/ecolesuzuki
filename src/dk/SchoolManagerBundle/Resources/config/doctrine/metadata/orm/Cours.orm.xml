@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Cours" table="cours">
+    <indexes>
+      <index name="FK_COUTER" columns="IDTARIF"/>
+    </indexes>
+    <id name="idcours" type="integer" column="IDCOURS">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="typecours" type="string" column="TYPECOURS" length="20" nullable="false"/>
+    <field name="dureecours" type="time" column="DUREECOURS" nullable="false"/>
+    <field name="debutsession" type="date" column="DEBUTSESSION" nullable="true"/>
+    <field name="finsession" type="date" column="FINSESSION" nullable="true"/>
+    <many-to-one field="idtarif" target-entity="Tarif">
+      <join-columns>
+        <join-column name="IDTARIF" referenced-column-name="IDTARIF"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-many field="idinscription" target-entity="Inscription" mapped-by="idcours"/>
+    <many-to-many field="iddiscipline" target-entity="Discipline" mapped-by="idcours"/>
+  </entity>
+</doctrine-mapping>

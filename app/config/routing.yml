@@ -1,0 +1,3 @@
+dk_school_manager:
+    resource: "@dkSchoolManagerBundle/Resources/config/routing.yml"
+    prefix:   /

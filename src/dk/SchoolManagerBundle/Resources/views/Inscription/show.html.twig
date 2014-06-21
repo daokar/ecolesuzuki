@@ -1,0 +1,44 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Inscription</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Dateinscription</th>
+                <td>{{ entity.dateinscription|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Modalitepaiement</th>
+                <td>{{ entity.modalitepaiement }}</td>
+            </tr>
+            <tr>
+                <th>Dateabandon</th>
+                <td>{{ entity.dateabandon|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Motifabandon</th>
+                <td>{{ entity.motifabandon }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('inscription') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('inscription_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

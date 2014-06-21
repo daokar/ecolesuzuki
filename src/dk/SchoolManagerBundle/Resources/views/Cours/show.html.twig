@@ -1,0 +1,44 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Cours</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Typecours</th>
+                <td>{{ entity.typecours }}</td>
+            </tr>
+            <tr>
+                <th>Dureecours</th>
+                <td>{{ entity.dureecours | date('H/i/s') }}</td>
+            </tr>
+            <tr>
+                <th>Debutsession</th>
+                <td>{% if entity.debutsession %}{{ entity.debutsession|date('m/d/Y') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Finsession</th>
+                <td>{% if entity.finsession %}{{ entity.finsession|date('m/d/Y') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('cours') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('cours_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

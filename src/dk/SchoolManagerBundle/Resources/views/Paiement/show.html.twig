@@ -1,0 +1,44 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Paiement</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Datepaiement</th>
+                <td>{{ entity.datepaiement|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Montantpaiement</th>
+                <td>{{ entity.montantpaiement }}</td>
+            </tr>
+            <tr>
+                <th>Modepaiement</th>
+                <td>{{ entity.modepaiement }}</td>
+            </tr>
+            <tr>
+                <th>Refpaiement</th>
+                <td>{{ entity.refpaiement }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('paiement') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('paiement_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
