@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Accessoire
  *
  * @ORM\Table(name="accessoire", indexes={@ORM\Index(name="FK_AVOIR_UN_PRIX", columns={"IDTARIF"}), @ORM\Index(name="FK_DISPOSER", columns={"IDPERSONNE"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="dk\SchoolManagerBundle\Repository\AccessoireRepository")
  */
 class Accessoire
 {
@@ -247,5 +247,18 @@ class Accessoire
     public function __toString()
     {
         return $this->nomaccessoire;
+    }
+
+    /**
+     * Set idtarif
+     *
+     * @param \dk\SchoolManagerBundle\Entity\Tarif $idtarif
+     * @return Accessoire
+     */
+    public function setIdtarif(\dk\SchoolManagerBundle\Entity\Tarif $idtarif = null)
+    {
+        $this->idtarif = $idtarif;
+
+        return $this;
     }
 }

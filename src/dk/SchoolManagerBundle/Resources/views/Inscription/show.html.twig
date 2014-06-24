@@ -9,9 +9,13 @@
                 <th>Id</th>
                 <td>{{ entity.id }}</td>
             </tr>
+             <tr>
+                <th>Eleve</th>
+                <td>{{ entity.idpersonne }}</td>
+            </tr>
             <tr>
                 <th>Dateinscription</th>
-                <td>{{ entity.dateinscription|date('Y-m-d H:i:s') }}</td>
+                <td>{% if entity.dateinscription %}{{ entity.dateinscription|date('d/m/Y') }}{% endif %}</td>
             </tr>
             <tr>
                 <th>Modalitepaiement</th>
@@ -19,7 +23,7 @@
             </tr>
             <tr>
                 <th>Dateabandon</th>
-                <td>{{ entity.dateabandon|date('Y-m-d H:i:s') }}</td>
+                <td>{% if entity.dateabandon %}{{ entity.dateabandon|date('d/m/Y') }}{% endif %}</td>
             </tr>
             <tr>
                 <th>Motifabandon</th>

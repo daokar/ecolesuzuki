@@ -6,43 +6,43 @@
     <table class="record_properties">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>Id</th>        
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
-                <th>Nompersonne</th>
+                <th>Nom</th>
                 <td>{{ entity.nompersonne }}</td>
             </tr>
             <tr>
-                <th>Prenompersonne</th>
+                <th>Prenom</th>
                 <td>{{ entity.prenompersonne }}</td>
             </tr>
             <tr>
-                <th>Typepersonne</th>
+                <th>Qualite</th>
                 <td>{{ entity.typepersonne }}</td>
             </tr>
             <tr>
-                <th>Sexepersonne</th>
+                <th>Sexe</th>
                 <td>{{ entity.sexepersonne }}</td>
             </tr>
             <tr>
-                <th>Datenaissance</th>
-                <td>{{ entity.datenaissance|date('Y-m-d H:i:s') }}</td>
+                <th>Date de naissance</th>
+                <td>{% if entity.datenaissance %}{{ entity.datenaissance|date('d/m/Y') }}{% endif %}</td>
             </tr>
             <tr>
-                <th>Mailpersonne</th>
+                <th>Email</th>
                 <td>{{ entity.mailpersonne }}</td>
             </tr>
             <tr>
-                <th>Telportable</th>
+                <th>Telephone Mobile</th>
                 <td>{{ entity.telportable }}</td>
             </tr>
             <tr>
                 <th>Adresse</th>
-                <td>{{ entity.idadresse }}</td>
+                <td>{% if entity.idadresse %}{{ entity.idadresse }}{% endif %}</td>
             </tr>
             <tr>
-                <th>Commentairepersonne</th>
+                <th>Commentaire</th>
                 <td>{{ entity.commentairepersonne }}</td>
             </tr>
         </tbody>

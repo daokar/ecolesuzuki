@@ -17,20 +17,26 @@ class CoursType extends AbstractType
         $builder
             ->add('typecours')
             ->add('dureecours')
-            ->add('debutsession')
-            ->add('finsession')
-            ->add('id', 'entity', array (
+            ->add('debutsession', 'date', array(
+                                   'empty_value' => array('day' => 'Jour', 'month' => 'Mois', 'year' => 'Année'),
+                                    'years' => range(date('Y') + 2, date('Y') - 2), 
+            ))
+            ->add('finsession', 'date', array(
+                                'empty_value' => array('day' => 'Jour', 'month' => 'Mois', 'year' => 'Année'),
+                                'years' => range(date('Y') + 2, date('Y') - 2), 
+            ))
+            ->add('idtarif', 'entity', array (
                 'class'=>'dkSchoolManagerBundle:Tarif',
-                'property'=>'id')
+                'property'=>'typetarif')
                  )
-            ->add('id', 'entity', array (
-                'class'=>'dkSchoolManagerBundle:Discipline',
-                'property'=>'id')
-                 )
-            ->add('id', 'entity', array (
-                'class'=>'dkSchoolManagerBundle:Inscription',
-                'property'=>'id')
-                 )
+//            ->add('iddiscipline', 'entity', array (
+//                'class'=>'dkSchoolManagerBundle:Discipline',
+//                'property'=>'nomdiscipline')
+//                 )
+//            ->add('idinscription', 'entity', array (
+//                'class'=>'dkSchoolManagerBundle:Inscription',
+//                'property'=>'id')
+//                 )
         ;
     }
     

@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Presence
  *
  * @ORM\Table(name="presence", indexes={@ORM\Index(name="FK_ETRE", columns={"IDPERSONNE"}), @ORM\Index(name="FK_JUSTIFIER", columns={"IDPLANNING"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="dk\SchoolManagerBundle\Repository\PresenceRepository")
  */
 class Presence
 {

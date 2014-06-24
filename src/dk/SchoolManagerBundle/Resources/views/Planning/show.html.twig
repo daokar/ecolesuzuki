@@ -11,7 +11,7 @@
             </tr>
             <tr>
                 <th>Dateplanning</th>
-                <td>{{ entity.dateplanning|date('Y-m-d H:i:s') }}</td>
+                <td>{% if entity.dateplanning %}{{ entity.dateplanning|date('d/m/Y') }}{% endif %}</td>
             </tr>
         </tbody>
     </table>

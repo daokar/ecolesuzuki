@@ -19,7 +19,7 @@
             </tr>
             <tr>
                 <th>Datetarif</th>
-                <td>{{ entity.datetarif|date('Y-m-d H:i:s') }}</td>
+                <td>{% if entity.datetarif %}{{ entity.datetarif|date('d/m/Y') }}{% endif %}</td>
             </tr>
         </tbody>
     </table>

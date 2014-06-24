@@ -15,10 +15,16 @@ class ParenteType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('idpersonne')
+            ->add('idpersonne' )
             ->add('perpersonne')
-            ->add('typeparente')
-            ->add('droitparente')
+            ->add('typeparente', 'choice', array(
+                        'choices' => array( 'Mere' => 'Mère',
+                                            'Pere' => 'Père',
+                                            'Frere' => 'Frère',
+                                            'Soeur' => 'Soeur'),
+                        'empty_value' => 'Choisir'))
+            ->add('droitparente', 'checkbox', array ( 'required' => false,                
+            ))
             
         ;
     }

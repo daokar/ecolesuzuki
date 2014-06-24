@@ -7,15 +7,15 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Nompersonne</th>
-                <th>Prenompersonne</th>
-                <th>Typepersonne</th>
-                <th>Sexepersonne</th>
-                <th>Datenaissance</th>
-                <th>Mailpersonne</th>
-                <th>Telportable</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Qualite</th>
+                <th>Sexe</th>
+                <th>Date de naissance</th>
+                <th>Email</th>
+                <th>Telephone</th>
                 <th>Adresse</th>
-                <th>Commentairepersonne</th>
+                <th>Commentaire</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -27,10 +27,10 @@
                 <td>{{ entity.prenompersonne }}</td>
                 <td>{{ entity.typepersonne }}</td>
                 <td>{{ entity.sexepersonne }}</td>
-                <td>{% if entity.datenaissance %}{{ entity.datenaissance|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.datenaissance %}{{ entity.datenaissance|date('d/m/Y') }}{% endif %}</td>
                 <td>{{ entity.mailpersonne }}</td>
                 <td>{{ entity.telportable }}</td>
-                <td>{{ entity.idadresse }}</td>
+                <td>{% if entity.idadresse %}{{ entity.idadresse }}{% endif %}</td>
                 <td>{{ entity.commentairepersonne }}</td>
                 <td>
                 <ul>

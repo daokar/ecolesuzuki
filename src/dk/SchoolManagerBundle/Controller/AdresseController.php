@@ -193,12 +193,12 @@ class AdresseController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('adresse_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('adresse_show', array('id' => $id)));
         }
 
         return array(
             'entity'      => $entity,
-//            'edit_form'   => $editForm->createView(),
+            'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }

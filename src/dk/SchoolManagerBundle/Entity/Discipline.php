@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Discipline
  *
  * @ORM\Table(name="discipline")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="dk\SchoolManagerBundle\Repository\DisciplineRepository")
  */
 class Discipline
 {
@@ -31,7 +31,7 @@ class Discipline
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Cours", inversedBy="iddiscipline")
+     * @ORM\ManyToMany(targetEntity="Cours", inversedBy="iddiscipline", cascade={"persist", "merge"})
      * @ORM\JoinTable(name="disciplinecours",
      *   joinColumns={
      *     @ORM\JoinColumn(name="IDDISCIPLINE", referencedColumnName="IDDISCIPLINE")

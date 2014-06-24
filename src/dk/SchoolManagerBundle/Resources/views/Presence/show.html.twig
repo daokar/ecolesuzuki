@@ -11,7 +11,7 @@
             </tr>
             <tr>
                 <th>Dateannulation</th>
-                <td>{{ entity.dateannulation|date('Y-m-d H:i:s') }}</td>
+                <td>{% if entity.dateannulation %}{{ entity.dateannulation|date('d/m/Y') }}{% endif %}</td>
             </tr>
             <tr>
                 <th>Motifannulation</th>
@@ -19,7 +19,7 @@
             </tr>
             <tr>
                 <th>Datereport</th>
-                <td>{{ entity.datereport|date('Y-m-d H:i:s') }}</td>
+                <td>{% if entity.datereport %}{{ entity.datereport|date('d/m/Y') }}{% endif %}</td>
             </tr>
         </tbody>
     </table>

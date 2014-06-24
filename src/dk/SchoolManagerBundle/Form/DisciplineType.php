@@ -16,9 +16,8 @@ class DisciplineType extends AbstractType
     {
         $builder
             ->add('nomdiscipline')
-            ->add('id', 'entity', array (
-                'class'=>'dkSchoolManagerBundle:Cours',
-                'property'=>'id')
+            ->add('idcours', 'entity', array (
+                'class'=>'dkSchoolManagerBundle:Cours')
                  )
         ;
     }

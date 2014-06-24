@@ -17,15 +17,31 @@ class PersonneType extends AbstractType
         $builder
             ->add('nompersonne')
             ->add('prenompersonne')
-            ->add('typepersonne')
-            ->add('sexepersonne')
-            ->add('datenaissance')
+            ->add('typepersonne', 'choice', array(
+                        'choices' => array( 'Eleve'   => 'Eleve',
+                                            'Enseignant' => 'Enseignant',
+                                            'Parent' => 'Parent',
+                                            'Prospect' => 'Prospect'),
+                        'empty_value' => 'Choisir',
+                        'required' => false,
+                ))
+            ->add('sexepersonne','choice', array(
+                        'choices'  => array('F'   => 'Féminin',
+                                            'M' => 'Masculin',),
+                        'empty_value'=>'Choisir',
+                        'required' => false,
+                ))
+            ->add('datenaissance', 'date', array(
+                'empty_value' => array('day' => 'Jour', 'month' => 'Mois', 'year' => 'Année'),
+                'years' => range(date('Y') + 0, date('Y') - 100),
+                'required' => false, 
+            ))
             ->add('mailpersonne')
             ->add('telportable')
-            ->add('id', 'entity', array (
+            ->add('idadresse', 'entity', array (
                 'class'=>'dkSchoolManagerBundle:Adresse',
-                'property'=>'id')
-                 )
+                'label'=>'Adresse', 'empty_value'=>'Choisir',
+                'required' => false,)                 )
             ->add('commentairepersonne')
         ;
     }

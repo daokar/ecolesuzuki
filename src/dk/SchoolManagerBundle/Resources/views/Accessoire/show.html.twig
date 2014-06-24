@@ -23,11 +23,11 @@
             </tr>
             <tr>
                 <th>Debutlocation</th>
-                <td>{{ entity.debutlocation|date('d/m/Y') }}</td>
+                <td>{% if entity.debutlocation %}{{ entity.debutlocation|date('m/d/Y') }}{% endif %}</td>
             </tr>
             <tr>
                 <th>Finlocation</th>
-                <td>{{ entity.finlocation|date('d/m/Y') }}</td>
+                <td>{% if entity.finlocation %}{{ entity.finlocation|date('m/d/Y') }}{% endif %}</td>
             </tr>
         </tbody>
     </table>

@@ -50,6 +50,10 @@ class DisciplineController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+//             foreach ($discipline->getIdcours() as $cours)
+//                {
+//                    $discipline->addIdcour($cours);
+//                }
             $em->persist($entity);
             $em->flush();
 
@@ -193,12 +197,12 @@ class DisciplineController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('discipline_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('discipline_show', array('id' => $id)));
         }
 
         return array(
             'entity'      => $entity,
-//            'edit_form'   => $editForm->createView(),
+            'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }

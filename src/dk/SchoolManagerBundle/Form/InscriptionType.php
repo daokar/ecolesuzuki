@@ -15,21 +15,32 @@ class InscriptionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('id', 'entity', array (
+            ->add('idpersonne', 'entity', array (
                 'class'=>'dkSchoolManagerBundle:Personne',
-                'property'=>'id')
+                'label'=>'Eleve', 'empty_value'=>'Choisir')
                  )
-            ->add('id', 'entity', array (
+            ->add('idcours', 'entity', array (
                 'class'=>'dkSchoolManagerBundle:Cours',
-                'property'=>'id')
+                'label'=>'Cours', 'empty_value'=>'Choisir',
+                'required' => false,
+                'property'=>'typecours')
                  )
             ->add('id', 'entity', array (
                 'class'=>'dkSchoolManagerBundle:Paiement',
-                'property'=>'id')
+                'label'=>'Paiement', 'empty_value'=>'Choisir',
+                'required' => false,
+                'property'=>'refpaiement')
                   )
-            ->add('dateinscription')
+            ->add('dateinscription', 'date', array(
+                'empty_value' => array('day' => 'Jour', 'month' => 'Mois', 'year' => 'Année'),
+                'years' => range(date('Y') + 0, date('Y') - 100), 
+            ))
             ->add('modalitepaiement')
-            ->add('dateabandon')
+            ->add('dateabandon', 'date', array(
+                'empty_value' => array('day' => 'Jour', 'month' => 'Mois', 'year' => 'Année'),
+                'years' => range(date('Y') + 0, date('Y') - 100),
+                'required'=> false,
+            ))
             ->add('motifabandon')
             
         ;

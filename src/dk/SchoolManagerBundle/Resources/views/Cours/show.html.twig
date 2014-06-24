@@ -13,9 +13,13 @@
                 <th>Typecours</th>
                 <td>{{ entity.typecours }}</td>
             </tr>
+             <tr>
+                <th>Tarifs</th>
+                <td>{{ entity.idtarif }}</td>
+            </tr>
             <tr>
                 <th>Dureecours</th>
-                <td>{{ entity.dureecours | date('H/i/s') }}</td>
+                <td>{% if entity.dureecours %}{{ entity.dureecours | date('H/i/s') }}{% endif %}</td>
             </tr>
             <tr>
                 <th>Debutsession</th>

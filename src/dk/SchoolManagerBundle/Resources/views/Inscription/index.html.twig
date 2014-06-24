@@ -2,11 +2,13 @@
 
 {% block body -%}
     <h1>Inscription list</h1>
+    <a href="show.html.twig"></a>
 
     <table class="records_list">
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Eleve</th>
                 <th>Dateinscription</th>
                 <th>Modalitepaiement</th>
                 <th>Dateabandon</th>
@@ -18,9 +20,10 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('inscription_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{% if entity.dateinscription %}{{ entity.dateinscription|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.idpersonne }}</td>
+                <td>{% if entity.dateinscription %}{{ entity.dateinscription|date('d/m/Y') }}{% endif %}</td>
                 <td>{{ entity.modalitepaiement }}</td>
-                <td>{% if entity.dateabandon %}{{ entity.dateabandon|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.dateabandon %}{{ entity.dateabandon|date('d/m/Y') }}{% endif %}</td>
                 <td>{{ entity.motifabandon }}</td>
                 <td>
                 <ul>

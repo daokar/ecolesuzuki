@@ -11,7 +11,7 @@
             </tr>
             <tr>
                 <th>Datepaiement</th>
-                <td>{{ entity.datepaiement|date('Y-m-d H:i:s') }}</td>
+                <td>{% if entity.datepaiement %}{{ entity.datepaiement|date('d/m/Y') }}{% endif %}</td>
             </tr>
             <tr>
                 <th>Montantpaiement</th>

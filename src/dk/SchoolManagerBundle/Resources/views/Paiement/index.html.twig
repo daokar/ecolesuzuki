@@ -18,7 +18,7 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('paiement_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{% if entity.datepaiement %}{{ entity.datepaiement|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.datepaiement %}{{ entity.datepaiement|date('d/m/Y') }}{% endif %}</td>
                 <td>{{ entity.montantpaiement }}</td>
                 <td>{{ entity.modepaiement }}</td>
                 <td>{{ entity.refpaiement }}</td>

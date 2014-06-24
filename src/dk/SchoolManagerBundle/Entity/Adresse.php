@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Adresse
  *
  * @ORM\Table(name="adresse")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="dk\SchoolManagerBundle\Repository\AdresseRepository")
  */
 class Adresse
 {
@@ -185,6 +185,6 @@ class Adresse
     
    public function __toString()
     {
-        return $this->adresse1;
+        return $this->adresse1.' - '.$this->ville;
    }
 }

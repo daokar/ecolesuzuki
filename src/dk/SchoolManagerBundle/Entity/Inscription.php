@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Inscription
  *
  * @ORM\Table(name="inscription", indexes={@ORM\Index(name="FK_FAIRE", columns={"IDPERSONNE"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="dk\SchoolManagerBundle\Repository\InscriptionRepository")
  */
 class Inscription
 {
@@ -62,7 +62,7 @@ class Inscription
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Cours", inversedBy="idinscription")
+     * @ORM\ManyToMany(targetEntity="Cours", inversedBy="idinscription", cascade={"persist", "merge"})
      * @ORM\JoinTable(name="inscriptioncours",
      *   joinColumns={
      *     @ORM\JoinColumn(name="IDINSCRIPTION", referencedColumnName="IDINSCRIPTION")
@@ -77,7 +77,7 @@ class Inscription
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Paiement", inversedBy="idinscription")
+     * @ORM\ManyToMany(targetEntity="Paiement", inversedBy="idinscription", cascade={"persist", "merge"})
      * @ORM\JoinTable(name="paiementinscription",
      *   joinColumns={
      *     @ORM\JoinColumn(name="IDINSCRIPTION", referencedColumnName="IDINSCRIPTION")
@@ -230,7 +230,7 @@ class Inscription
      * @param \dk\SchoolManagerBundle\Entity\Cours $idcours
      * @return Inscription
      */
-    public function addIdcour(\dk\SchoolManagerBundle\Entity\Cours $idcours)
+    public function addIdcours(\dk\SchoolManagerBundle\Entity\Cours $idcours)
     {
         $this->idcours[] = $idcours;
 
@@ -242,7 +242,7 @@ class Inscription
      *
      * @param \dk\SchoolManagerBundle\Entity\Cours $idcours
      */
-    public function removeIdcour(\dk\SchoolManagerBundle\Entity\Cours $idcours)
+    public function removeIdcours(\dk\SchoolManagerBundle\Entity\Cours $idcours)
     {
         $this->idcours->removeElement($idcours);
     }
@@ -291,4 +291,17 @@ class Inscription
     }
     
    
+
+    /**
+     * Set idpersonne
+     *
+     * @param \dk\SchoolManagerBundle\Entity\Personne $idpersonne
+     * @return Inscription
+     */
+    public function setIdpersonne(\dk\SchoolManagerBundle\Entity\Personne $idpersonne = null)
+    {
+        $this->idpersonne = $idpersonne;
+
+        return $this;
+    }
 }
