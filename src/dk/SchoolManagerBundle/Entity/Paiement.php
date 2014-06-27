@@ -8,14 +8,14 @@ use Doctrine\ORM\Mapping as ORM;
  * Paiement
  *
  * @ORM\Table(name="paiement")
- * @ORM\Entity(repositoryClass="dk\SchoolManagerBundle\Repository\PaiementRepository")
+ * @ORM\Entity
  */
 class Paiement
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="IDPAIMENT", type="integer", nullable=false)
+     * @ORM\Column(name="IDPAIEMENT", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -52,14 +52,14 @@ class Paiement
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Accessoire", mappedBy="idpaiment")
+     * @ORM\ManyToMany(targetEntity="Accessoire", mappedBy="idpaiement")
      */
     private $idaccessoire;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Inscription", mappedBy="idpaiment")
+     * @ORM\ManyToMany(targetEntity="Inscription", mappedBy="idpaiement")
      */
     private $idinscription;
 

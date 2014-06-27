@@ -9,6 +9,14 @@
                 <th>Id</th>
                 <td>{{ entity.id }}</td>
             </tr>
+             <tr>
+                <th>Eleve</th>
+                <td>{{ entity.idpersonne }}</td>
+            </tr>
+             <tr>
+                <th>Planning</th>
+                <td>{{ entity.idplanning.id }}</td>
+            </tr>
             <tr>
                 <th>Dateannulation</th>
                 <td>{% if entity.dateannulation %}{{ entity.dateannulation|date('d/m/Y') }}{% endif %}</td>

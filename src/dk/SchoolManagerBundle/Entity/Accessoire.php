@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Accessoire
  *
  * @ORM\Table(name="accessoire", indexes={@ORM\Index(name="FK_AVOIR_UN_PRIX", columns={"IDTARIF"}), @ORM\Index(name="FK_DISPOSER", columns={"IDPERSONNE"})})
- * @ORM\Entity(repositoryClass="dk\SchoolManagerBundle\Repository\AccessoireRepository")
+ * @ORM\Entity
  */
 class Accessoire
 {
@@ -65,24 +65,24 @@ class Accessoire
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Paiement", inversedBy="idaccessoire")
+     * @ORM\ManyToMany(targetEntity="Paiement", inversedBy="idaccessoire", cascade={"persist", "merge"})
      * @ORM\JoinTable(name="paiementaccessoire",
      *   joinColumns={
      *     @ORM\JoinColumn(name="IDACCESSOIRE", referencedColumnName="IDACCESSOIRE")
      *   },
      *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="IDPAIMENT", referencedColumnName="IDPAIMENT")
+     *     @ORM\JoinColumn(name="IDPAIEMENT", referencedColumnName="IDPAIEMENT")
      *   }
      * )
      */
-    private $idpaiment;
+    private $idpaiement;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->idpaiment = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->idpaiement = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
 
@@ -212,36 +212,36 @@ class Accessoire
     }
 
     /**
-     * Add idpaiment
+     * Add idpaiement
      *
-     * @param \dk\SchoolManagerBundle\Entity\Paiement $idpaiment
+     * @param \dk\SchoolManagerBundle\Entity\Paiement $idpaiement
      * @return Accessoire
      */
-    public function addIdpaiment(\dk\SchoolManagerBundle\Entity\Paiement $idpaiment)
+    public function addIdpaiement(\dk\SchoolManagerBundle\Entity\Paiement $idpaiement)
     {
-        $this->idpaiment[] = $idpaiment;
+        $this->idpaiement[] = $idpaiement;
 
         return $this;
     }
 
     /**
-     * Remove idpaiment
+     * Remove idpaiement
      *
-     * @param \dk\SchoolManagerBundle\Entity\Paiement $idpaiment
+     * @param \dk\SchoolManagerBundle\Entity\Paiement $idpaiement
      */
-    public function removeIdpaiment(\dk\SchoolManagerBundle\Entity\Paiement $idpaiment)
+    public function removeIdpaiement(\dk\SchoolManagerBundle\Entity\Paiement $idpaiement)
     {
-        $this->idpaiment->removeElement($idpaiment);
+        $this->idpaiement->removeElement($idpaiement);
     }
 
     /**
-     * Get idpaiment
+     * Get idpaiement
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getIdpaiment()
+    public function getIdpaiement()
     {
-        return $this->idpaiment;
+        return $this->idpaiement;
     }
     
     public function __toString()

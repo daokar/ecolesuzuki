@@ -10,8 +10,16 @@
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
+                <th>Cours</th>
+                <td>{{ entity.idcours }}</td>
+            </tr>
+            <tr>
+                <th>Salle</th>
+                <td>{{ entity.idsalle }}</td>
+            </tr>
+            <tr>
                 <th>Dateplanning</th>
-                <td>{% if entity.dateplanning %}{{ entity.dateplanning|date('d/m/Y') }}{% endif %}</td>
+                <td>{% if entity.dateplanning %}{{ entity.dateplanning|date('d/m/Y H:i:s') }}{% endif %}</td>
             </tr>
         </tbody>
     </table>

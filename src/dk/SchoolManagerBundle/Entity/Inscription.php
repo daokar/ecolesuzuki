@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Inscription
  *
  * @ORM\Table(name="inscription", indexes={@ORM\Index(name="FK_FAIRE", columns={"IDPERSONNE"})})
- * @ORM\Entity(repositoryClass="dk\SchoolManagerBundle\Repository\InscriptionRepository")
+ * @ORM\Entity
  */
 class Inscription
 {
@@ -83,11 +83,11 @@ class Inscription
      *     @ORM\JoinColumn(name="IDINSCRIPTION", referencedColumnName="IDINSCRIPTION")
      *   },
      *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="IDPAIMENT", referencedColumnName="IDPAIMENT")
+     *     @ORM\JoinColumn(name="IDPAIEMENT", referencedColumnName="IDPAIEMENT")
      *   }
      * )
      */
-    private $idpaiment;
+    private $idpaiement;
 
     /**
      * Constructor
@@ -95,7 +95,7 @@ class Inscription
     public function __construct()
     {
         $this->idcours = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->idpaiment = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->idpaiement = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
 
@@ -207,7 +207,7 @@ class Inscription
      * @param \dk\SchoolManagerBundle\Entity\Personne $idpersonne
      * @return Inscription
      */
-    public function setId(\dk\SchoolManagerBundle\Entity\Personne $idpersonne = null)
+    public function setIdpersonne(\dk\SchoolManagerBundle\Entity\Personne $idpersonne = null)
     {
         $this->idpersonne = $idpersonne;
 
@@ -230,7 +230,7 @@ class Inscription
      * @param \dk\SchoolManagerBundle\Entity\Cours $idcours
      * @return Inscription
      */
-    public function addIdcours(\dk\SchoolManagerBundle\Entity\Cours $idcours)
+    public function addIdcour(\dk\SchoolManagerBundle\Entity\Cours $idcours)
     {
         $this->idcours[] = $idcours;
 
@@ -242,7 +242,7 @@ class Inscription
      *
      * @param \dk\SchoolManagerBundle\Entity\Cours $idcours
      */
-    public function removeIdcours(\dk\SchoolManagerBundle\Entity\Cours $idcours)
+    public function removeIdcour(\dk\SchoolManagerBundle\Entity\Cours $idcours)
     {
         $this->idcours->removeElement($idcours);
     }
@@ -258,50 +258,36 @@ class Inscription
     }
 
     /**
-     * Add idpaiment
+     * Add idpaiement
      *
-     * @param \dk\SchoolManagerBundle\Entity\Paiement $idpaiment
+     * @param \dk\SchoolManagerBundle\Entity\Paiement $idpaiement
      * @return Inscription
      */
-    public function addIdpaiment(\dk\SchoolManagerBundle\Entity\Paiement $idpaiment)
+    public function addIdpaiement(\dk\SchoolManagerBundle\Entity\Paiement $idpaiement)
     {
-        $this->idpaiment[] = $idpaiment;
+        $this->idpaiement[] = $idpaiement;
 
         return $this;
     }
 
     /**
-     * Remove idpaiment
+     * Remove idpaiement
      *
-     * @param \dk\SchoolManagerBundle\Entity\Paiement $idpaiment
+     * @param \dk\SchoolManagerBundle\Entity\Paiement $idpaiement
      */
-    public function removeIdpaiment(\dk\SchoolManagerBundle\Entity\Paiement $idpaiment)
+    public function removeIdpaiement(\dk\SchoolManagerBundle\Entity\Paiement $idpaiement)
     {
-        $this->idpaiment->removeElement($idpaiment);
+        $this->idpaiement->removeElement($idpaiement);
     }
 
     /**
-     * Get idpaiment
+     * Get idpaiement
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getIdpaiment()
+    public function getIdpaiement()
     {
-        return $this->idpaiment;
+        return $this->idpaiement;
     }
-    
-   
 
-    /**
-     * Set idpersonne
-     *
-     * @param \dk\SchoolManagerBundle\Entity\Personne $idpersonne
-     * @return Inscription
-     */
-    public function setIdpersonne(\dk\SchoolManagerBundle\Entity\Personne $idpersonne = null)
-    {
-        $this->idpersonne = $idpersonne;
-
-        return $this;
-    }
 }

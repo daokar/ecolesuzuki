@@ -16,20 +16,20 @@ class AccessoireType extends AbstractType
     {
         $builder
             ->add('nomaccessoire')
-            ->add('id', 'entity', array (
-                'class'=>'dkSchoolManagerBundle:Personne',
-                'property'=>'id')
+            ->add('idpersonne', null, array ('label' => 'Eleve')
                  )
-            ->add('id', 'entity', array (
-                'class'=>'dkSchoolManagerBundle:Tarif',
-                'property'=>'id')
+            ->add('idtarif', null, array ('label' => 'Tarif')
                  )
-            ->add('id', 'entity', array (
-                'class'=>'dkSchoolManagerBundle:Paiement',
-                'property'=>'id')
+            ->add('idpaiement', null, array ('label' => 'Paiement')
                  )
-            ->add('debutlocation')
-            ->add('finlocation')
+            ->add('debutlocation', 'date', array(
+                    'empty_value' => array('day' => 'Jour', 'month' => 'Mois', 'year' => 'Année'),
+                    'years' => range(date('Y') + 2, date('Y') - 2),
+                ))
+            ->add('finlocation', 'date', array(
+                    'empty_value' => array('day' => 'Jour', 'month' => 'Mois', 'year' => 'Année'),
+                    'years' => range(date('Y') + 2, date('Y') - 2),
+                ))
             
         ;
     }

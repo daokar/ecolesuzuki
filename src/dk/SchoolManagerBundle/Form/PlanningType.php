@@ -15,15 +15,12 @@ class PlanningType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('dateplanning')
-            ->add('id', 'entity', array (
-                'class'=>'dkSchoolManagerBundle:Cours',
-                'property'=>'id')
-                 )
-            ->add('id', 'entity', array (
-                'class'=>'dkSchoolManagerBundle:Salle',
-                'property'=>'id')
-                 )
+            ->add('dateplanning', 'datetime', array(
+                    'empty_value' => array('day' => 'Jour', 'month' => 'Mois', 'year' => 'Année'),
+                    'years' => range(date('Y') + 1, date('Y') - 0),
+                ))
+            ->add('idcours')
+            ->add('idsalle')
         ;
     }
     

@@ -7,6 +7,8 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Eleve</th>
+                <th>Planning</th>
                 <th>Dateannulation</th>
                 <th>Motifannulation</th>
                 <th>Datereport</th>
@@ -17,6 +19,8 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('presence_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.idpersonne }}</td>
+               <td>{{ entity.idplanning.id }}</td>
                 <td>{% if entity.dateannulation %}{{ entity.dateannulation|date('d/m/Y') }}{% endif %}</td>
                 <td>{{ entity.motifannulation }}</td>
                 <td>{% if entity.datereport %}{{ entity.datereport|date('d/m/Y') }}{% endif %}</td>

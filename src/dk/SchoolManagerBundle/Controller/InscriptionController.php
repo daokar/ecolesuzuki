@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use dk\SchoolManagerBundle\Entity\Inscription;
 use dk\SchoolManagerBundle\Form\InscriptionType;
+//use dk\SchoolManagerBundle\Repository\InscriptionRepository;
 
 /**
  * Inscription controller.

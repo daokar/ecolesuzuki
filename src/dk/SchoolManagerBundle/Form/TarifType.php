@@ -17,7 +17,10 @@ class TarifType extends AbstractType
         $builder
             ->add('typetarif')
             ->add('montanttarif')
-            ->add('datetarif')
+            ->add('datetarif', 'date', array(
+                    'empty_value' => array('day' => 'Jour', 'month' => 'Mois', 'year' => 'Année'),
+                    'years' => range(date('Y') + 1, date('Y') - 3),
+                ))
         ;
     }
     
