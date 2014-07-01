@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Inscription
  *
  * @ORM\Table(name="inscription", indexes={@ORM\Index(name="FK_FAIRE", columns={"IDPERSONNE"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="dk\SchoolManagerBundle\Entity\InscriptionRepository")
  */
 class Inscription
 {

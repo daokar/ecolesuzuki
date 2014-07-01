@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Planning
  *
  * @ORM\Table(name="planning", indexes={@ORM\Index(name="FK_AVOIR_LIEU", columns={"IDSALLE"}), @ORM\Index(name="FK_PLANIFIER", columns={"IDCOURS"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="dk\SchoolManagerBundle\Entity\PlanningRepository")
  */
 class Planning
 {

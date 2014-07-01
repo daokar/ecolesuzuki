@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Parente
  *
  * @ORM\Table(name="parente", indexes={@ORM\Index(name="FK_AVOIRPARENT", columns={"IDPERSONNE"}), @ORM\Index(name="FK_ETREPARENT", columns={"PER_IDPERSONNE"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="dk\SchoolManagerBundle\Entity\ParenteRepository")
  */
 class Parente
 {

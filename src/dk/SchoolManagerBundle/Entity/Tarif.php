@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Tarif
  *
  * @ORM\Table(name="tarif")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="dk\SchoolManagerBundle\Entity\TarifRepository")
  */
 class Tarif
 {

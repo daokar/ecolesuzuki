@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Accessoire
  *
  * @ORM\Table(name="accessoire", indexes={@ORM\Index(name="FK_AVOIR_UN_PRIX", columns={"IDTARIF"}), @ORM\Index(name="FK_DISPOSER", columns={"IDPERSONNE"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="dk\SchoolManagerBundle\Entity\AccessoireRepository")
  */
 class Accessoire
 {

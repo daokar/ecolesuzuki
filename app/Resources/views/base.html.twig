@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
+    
     <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <meta charset="UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Ecole d'Art Musical !{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('dk/SchoolManagerBundle/Resources/Public/css/bootstrap.css') }}" >
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" >
+        
+        
     </head>
+    
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+       
+        {% block javascripts %}
+        <script src="{{ asset('dk/SchoolManagerBundle/Resources/Public/js/jquery.js') }}"></script>
+        <script src="{{ asset('dk/SchoolManagerBundle/Resources/Public/js/bootstrap.js') }}"></script>
+        {% endblock %}
     </body>
-</html>
+    
+</html> 
