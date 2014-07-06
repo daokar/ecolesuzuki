@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <title> DK Project - {% block title %}{% endblock %}</title>
+     
+        {% block stylesheets %} {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" >    
+    </head>
+
+    <body>
+      
+       {% block body %} {% endblock %}
+
+
+        {% block javascripts %}
+            <script src="{{ asset('web/bundles/dkschoolmanager/js/jquery.js') }}"></script>
+        {% endblock %}
+    </body>

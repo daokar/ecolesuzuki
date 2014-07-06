@@ -1,10 +1,7 @@
-dk_school_manager_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: dkSchoolManagerBundle:Default:index }
-hello:
-    pattern: /hello/{name}
-    defaults: { _controller: dkSchoolManagerBundle:Hello:index }
-
+homepage:
+    pattern:  /about
+    defaults: { _controller: dkSchoolManagerBundle:Default:about }
+    
 tarif:
     pattern: /tarif
     defaults: {_controller: dkSchoolManagerBundle:Tarif:index }

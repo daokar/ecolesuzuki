@@ -12,4 +12,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class PersonneRepository extends EntityRepository
 {
+     public function findAllOrderedByTypepersonne()
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT p FROM dkSchoolManagerBundle:Personne p ORDER BY p.typepersonne ASC'
+            )
+            ->getResult();
+    }
 }
