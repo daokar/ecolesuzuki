@@ -15,8 +15,9 @@ class DisciplineType extends AbstractType {
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
                 ->add('nomdiscipline')
-                ->add('idcours', null, array('label' => 'Cours')
-        );
+                ->add('idcours', 'entity', array('label' => 'Cours', 'empty_value' => 'Choisir',
+                    'class' => 'dkSchoolManagerBundle:Cours'))
+        ;
     }
 
     /**

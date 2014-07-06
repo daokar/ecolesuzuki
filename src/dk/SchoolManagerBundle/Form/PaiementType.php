@@ -16,7 +16,7 @@ class PaiementType extends AbstractType {
         $builder
                 ->add('datepaiement', 'date', array(
                     'empty_value' => array('day' => 'Jour', 'month' => 'Mois', 'year' => 'Année'),
-                    'years' => range(date('Y') + 1, date('Y') - 3),
+                    'years' => range(date('Y') + 0, date('Y') - 2),
                 ))
                 ->add('montantpaiement')
                 ->add('modepaiement')

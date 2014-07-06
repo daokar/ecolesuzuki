@@ -15,8 +15,9 @@ class PresenceType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('idpersonne')
-            ->add('idplanning', 'entity', array ('property' => 'id',
+            ->add('idpersonne', 'entity', array ('empty_value' => 'Choisir',
+                                            'class' => 'dkSchoolManagerBundle:Personne'))
+            ->add('idplanning', 'entity', array ('property' => 'id', 'empty_value' => 'Choisir',
                                             'class' => 'dkSchoolManagerBundle:Planning'))
             ->add('dateannulation', 'date', array(
                     'empty_value' => array('day' => 'Jour', 'month' => 'Mois', 'year' => 'Année'),
